@@ -1,3 +1,7 @@
-.cache
-build
+# MacOS
 .DS_Store
+
+# Project Unrelated
+.cache
+.idea
+cmake-build-debug
