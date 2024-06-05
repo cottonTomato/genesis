@@ -20,7 +20,8 @@ add_executable(${PROJECT_NAME}
         src/Application.cpp
         src/Renderer.cpp
         src/Random.cpp
-        src/Random.h
+        src/Level/Level.cpp
+        src/Graphics/SpriteLoader.cpp
 )
 target_include_directories(${PROJECT_NAME} PRIVATE ${CMAKE_SOURCE_DIR}/src)
 target_link_libraries(${PROJECT_NAME} raylib)

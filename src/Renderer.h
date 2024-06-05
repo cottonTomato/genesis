@@ -14,7 +14,7 @@ public:
 
   void Init();
   void ClearRandom();
-  void RefreshTexture();
+  void Update();
 
   [[nodiscard]] const Texture2D &GetTexture() const;
 

@@ -22,11 +22,9 @@ void Renderer::ClearRandom() {
     random |= 0xff << 24;
     m_ImageBuffer[i] = random;
   }
-
-  RefreshTexture();
 }
 
-void Renderer::RefreshTexture() {
+void Renderer::Update() {
   UpdateTexture(m_Texture, m_ImageBuffer);
 }
 

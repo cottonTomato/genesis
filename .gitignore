@@ -5,3 +5,6 @@
 .cache
 .idea
 cmake-build-debug
+
+# Assets and Big Files
+assets

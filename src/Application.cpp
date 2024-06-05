@@ -43,8 +43,8 @@ void Application::OnUpdate() {
   // DrawText("Congrats! You created your first window!", 190, 200, 20, LIGHTGRAY);
 
   m_Renderer.ClearRandom();
+  m_Renderer.Update();
   DrawTextureEx(m_Renderer.GetTexture(), {0, 0}, 0, m_specifications.Scale, WHITE);
-
 
   EndDrawing();
 }
