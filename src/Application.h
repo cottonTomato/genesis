@@ -1,5 +1,5 @@
-#ifndef APPLICATION_H_
-#define APPLICATION_H_
+#ifndef APPLICATION_H
+#define APPLICATION_H
 
 #include "Renderer.h"
 #include <string>
@@ -7,10 +7,9 @@
 namespace Genesis {
 
 struct ApplicationSpecifications {
-  int AspectRatio = 16 / 10;
   int Width = 300;
-  int Height = Width / AspectRatio;
-  int Scale = 3;
+  int Height = Width / 16 * 10;
+  int Scale = 3.0f;
   std::string Title = "Genesis";
 };
 
@@ -35,4 +34,4 @@ private:
 
 } // namespace Genesis
 
-#endif // APPLICATION_H_
+#endif //APPLICATION_H

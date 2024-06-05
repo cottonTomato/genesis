@@ -21,7 +21,7 @@ void Application::Run() {
   InitWindow(m_specifications.Width * m_specifications.Scale,
              m_specifications.Height * m_specifications.Scale,
              m_specifications.Title.c_str());
-
+  m_Renderer.Init();
 #if defined(PLATFORM_WEB)
   emscripten_set_main_loop([&]() { this->OnUpdate(); }, 0, 1);
 #else
@@ -39,16 +39,18 @@ void Application::Run() {
 void Application::OnUpdate() {
   BeginDrawing();
 
-  ClearBackground(RAYWHITE);
+  // ClearBackground(RAYWHITE);
+  // DrawText("Congrats! You created your first window!", 190, 200, 20, LIGHTGRAY);
 
-  DrawText("Congrats! You created your first window!", 190, 200, 20, LIGHTGRAY);
-  DrawTexture(m_Renderer.GetTexture(), 0, 0, WHITE);
+  m_Renderer.ClearRandom();
+  DrawTextureEx(m_Renderer.GetTexture(), {0, 0}, 0, m_specifications.Scale, WHITE);
+
 
   EndDrawing();
 }
 
 Application &Application::Get() { return *s_Instance; }
 
-Renderer &Application::GetRenderer() { return Application::Get().m_Renderer; }
+Renderer &Application::GetRenderer() { return Get().m_Renderer; }
 
 } // namespace Genesis

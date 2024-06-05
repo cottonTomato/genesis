@@ -1,8 +1,8 @@
-#ifndef RENDERER_H_
-#define RENDERER_H_
+#ifndef RENDERER_H
+#define RENDERER_H
 
-#include <raylib.h>
 #include <cstdint>
+#include <raylib.h>
 
 namespace Genesis {
 
@@ -11,6 +11,10 @@ public:
   Renderer(int width, int height);
 
   ~Renderer();
+
+  void Init();
+  void ClearRandom();
+  void RefreshTexture();
 
   [[nodiscard]] const Texture2D &GetTexture() const;
 
@@ -25,4 +29,4 @@ private:
 
 } // namespace Genesis
 
-#endif // RENDERER_H_
+#endif //RENDERER_H
